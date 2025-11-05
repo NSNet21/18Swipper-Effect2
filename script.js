@@ -10,46 +10,47 @@ const indexContainer = document.getElementById("indexContainer");
 
 // adding remove blur & black film effect
 nextBtn.addEventListener("mouseenter", () => {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.add("btn-hover-state");
-  }
+  addHoverState();
 });
 
 // removing blur & black film effect remover
 nextBtn.addEventListener("mouseleave", () => {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("btn-hover-state");
-  }
+  removeHoverState();
 });
 
 // adding remove blur & black film effect
 backBtn.addEventListener("mouseenter", () => {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.add("btn-hover-state");
-  }
+  addHoverState();
 });
 
 // removing blur & black film effect remover
 backBtn.addEventListener("mouseleave", () => {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("btn-hover-state");
-  }
+  removeHoverState();
 });
 
 // adding remove blur & black film effect
 indexContainer.addEventListener("mouseenter", () => {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.add("btn-hover-state");
-  }
+  addHoverState();
 });
 
 // removing blur & black film effect remover
 indexContainer.addEventListener("mouseleave", () => {
+  removeHoverState();
+});
+
+// function to add hover state to the slides
+function addHoverState() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.add("btn-hover-state");
+  }
+}
+
+// function to remove hover state to the slides
+function removeHoverState() {
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("btn-hover-state");
   }
-});
-
+}
 // swiper effect
 const slider = document.getElementById("slider");
 let slideCount = slides.length;
@@ -91,6 +92,7 @@ indicatorOnLoad();
 // add next slide command to the next button
 nextBtn.addEventListener("click", () => {
   if (isTransitioning) return;
+  isTransitioning = true;
   index = index + 1;
   if (index < 0) {
     index = slideCount - 1;
