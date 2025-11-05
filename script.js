@@ -91,6 +91,8 @@ indicatorOnLoad();
 
 // add next slide command to the next button
 nextBtn.addEventListener("click", () => {
+  // new currentSlide for console.log
+  const currentSlide = slides[index];
   if (isTransitioning) return;
   isTransitioning = true;
   index = index + 1;
@@ -100,12 +102,15 @@ nextBtn.addEventListener("click", () => {
     index = 0;
   }
   slider.style.transition = "";
+  console.log(currentSlide.id, "_", currentSlide.className);
   updateSlide();
   updateActiveIndicator();
 });
 
 // add back slide command to the back button
 backBtn.addEventListener("click", () => {
+  // new currentSlide for console.log
+  const currentSlide = slides[index];
   if (isTransitioning) return;
   isTransitioning = true;
   index = index - 1;
@@ -115,6 +120,7 @@ backBtn.addEventListener("click", () => {
     index = 0;
   }
   slider.style.transition = "";
+  console.log(currentSlide.id, "_", currentSlide.className);
   updateSlide();
   updateActiveIndicator();
 });
