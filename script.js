@@ -30,7 +30,6 @@ backBtn.addEventListener("mouseenter", () => {
 });
 
 // removing blur & black film effect remover
-
 backBtn.addEventListener("mouseleave", () => {
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("btn-hover-state");
@@ -205,5 +204,3 @@ function indicatorOnLoad() {
   }
   indexIndicator[0].classList.add("active");
 }
-
-console.log(indexContainer);
