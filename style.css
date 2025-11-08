@@ -52,6 +52,7 @@ body {
   text-transform: uppercase;
   cursor: default;
   transition: all 0.5s ease;
+  text-align: center;
 }
 
 .header:hover {
